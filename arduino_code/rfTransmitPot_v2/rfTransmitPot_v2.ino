@@ -6,15 +6,13 @@ int potPin = 1;
 int potval = 0;
 String potvalStr;
 
-void setup()
-{
-  Serial.begin(9600);
+void setup(){
+  Serial.begin(115200);
   if (!driver.init())
     Serial.println("init failed");
 }
 
-void loop()
-{
+void loop(){
   potval = analogRead(potPin);
   potvalStr = String(potval);
 
@@ -23,5 +21,6 @@ void loop()
   driver.send((uint8_t *)msg, strlen(msg));          
   driver.waitPacketSent();
 
-
+Serial.println(potvalStr);
+delay(50);
 }

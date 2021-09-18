@@ -3,7 +3,6 @@
 #include <Keyboard.h>
 #include <Mouse.h>
 
-
 RH_ASK driver(8000, 9, 12, 8, false);
 
 String str_receive;
